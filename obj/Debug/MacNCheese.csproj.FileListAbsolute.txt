@@ -1,0 +1,3 @@
+C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\obj\Debug\MacNCheese.csproj.AssemblyReference.cache
+C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\obj\Debug\MacNCheese.exe.config
+C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\obj\Debug\MacNCheese.csproj.CoreCompileInputs.cache
