@@ -12,6 +12,7 @@ namespace MacNCheese.Customs.MacNCheeseProcess
         public override GameObject Prefab => Mod.Cheese.Prefab;         // Filler line until graphics are made
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
+        public override bool IsMergeableSide { get => base.IsMergeableSide; protected set => base.IsMergeableSide = true; }
 
         /*  public override void OnRegister(GameDataObject gameDataObject)
           {
