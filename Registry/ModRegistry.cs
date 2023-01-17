@@ -13,8 +13,8 @@ namespace MacNCheese.Registry
     {
         private EntityQuery Upgrades;
 
-        private static readonly List<Tuple<ILocalisedRecipeHolder, Dish>> RecipeHolders = new();
-        private static readonly List<Dish> BaseDishes = new();
+        private static readonly List<Tuple<ILocalisedRecipeHolder, Dish>> RecipeHolders = new List<Tuple<ILocalisedRecipeHolder, Dish>>();
+        private static readonly List<Dish> BaseDishes = new List<Dish>();
 
         private static bool GameDataBuilt = false;
 

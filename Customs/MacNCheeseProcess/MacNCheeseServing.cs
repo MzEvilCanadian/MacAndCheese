@@ -4,7 +4,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MacNCheese.Customs.MacNCheseProcess
+namespace MacNCheese.Customs.MacNCheeseProcess
 {
     class MacNCheeseServing : CustomItem
     {

@@ -11,7 +11,7 @@ namespace MacNCheese.Customs.MacNCheeseProcess
         public override string UniqueNameID => "Uncooked Pasta";
         public override GameObject Prefab => Mod.Cheese.Prefab;         // Filler line until graphics are made
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
+        public override ItemStorage ItemStorageFlags => ItemStorage.Dish;
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
@@ -31,9 +31,9 @@ namespace MacNCheese.Customs.MacNCheeseProcess
         {
             new Item.ItemProcess
             {
-                Duration = 5,
+                Duration = 7,
                 Process = Mod.Cook,
-                Result = Mod.CookedPasta
+                Result = Mod.CookedMacNCheesePot
             }
         };
 

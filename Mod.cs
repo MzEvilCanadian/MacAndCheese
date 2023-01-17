@@ -15,21 +15,22 @@ using ItemReference = KitchenLib.References.ItemReferences;
 
 namespace MacNCheese
 {
-    class Mod
+    class Mod : BaseMod
     {
         internal const string MOD_ID = "MacAndCheese";
         internal const string MOD_NAME = "Mac and Cheese";
-        internal const string MOD_VERSION = "0.0.1";
+        internal const string MOD_VERSION = "0.0.2";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         internal const string PLATEUP_VERSION = "1.1.2";
 
-        public static AssetBundle bundle;
+       //  public static AssetBundle bundle;
 
         internal static Process Cook => GetExistingGDO<Process>(ProcessReferences.Cook);
         internal static Process Chop => GetExistingGDO<Process>(ProcessReferences.Chop);
         internal static Item Pot => GetExistingGDO<Item>(ItemReference.Pot);
         internal static Item Water => GetExistingGDO<Item>(ItemReference.Water);
         internal static Item Cheese => GetExistingGDO<Item>(ItemReference.Cheese);
+        internal static Item Tomato => GetExistingGDO<Item>(ItemReference.Tomato);
 
         public static Item Milk => Find<Item>(IngredientLib.References.IngredientReferences.Milk);
         public static Item MilkIngredient => Find<Item>(IngredientLib.References.SplitIngredientReferences.Milk);
@@ -42,6 +43,8 @@ namespace MacNCheese
         internal static ItemGroup UncookedMacNCheese => GetModdedGDO<ItemGroup, UncookedMacNCheese>();
         internal static Item CookedMacNCheesePot  => GetModdedGDO<Item, CookedMacNCheesePot>();
         internal static Item MacNCheeseServing => GetModdedGDO<Item, MacNCheeseServing>();
+
+        internal static Dish MacNCheeseDish => GetModdedGDO<Dish, MacNCheeseDish>();
 
         internal static bool debug = true;
         public static void LogInfo(string _log) { Debug.Log($"[{MOD_NAME}] " + _log); }
@@ -57,7 +60,13 @@ namespace MacNCheese
         public override void PostActivate(KitchenMods.Mod mod)
         {
             base.PostActivate(mod);
-            bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
+            // bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
+            AddGameDataObject<UncookedPasta>();
+            AddGameDataObject<CookedPasta>();
+            AddGameDataObject<UncookedMacNCheese>();
+            AddGameDataObject<CookedMacNCheesePot>();
+            AddGameDataObject<MacNCheeseServing>();
+            AddGameDataObject<MacNCheeseDish>();
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
             {

@@ -8,7 +8,7 @@ namespace MacNCheese.Customs.MacNCheeseProcess
     class CookedMacNCheesePot : CustomItem
     {
         public override string UniqueNameID => "CookedNoodlePot";
-        public override GameObject Prefab => Mod.Milk.Prefab;
+        public override GameObject Prefab => Mod.Tomato.Prefab;
         public override Item DisposesTo => Mod.Pot;
         public override int SplitCount => 10;
         public override Item SplitSubItem => Mod.MacNCheeseServing;

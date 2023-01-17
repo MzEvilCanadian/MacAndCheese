@@ -1,3 +1,7 @@
 C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\obj\Debug\MacNCheese.csproj.AssemblyReference.cache
-C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\obj\Debug\MacNCheese.exe.config
 C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\obj\Debug\MacNCheese.csproj.CoreCompileInputs.cache
+C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\bin\Debug\MacNCheese.dll.config
+C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\bin\Debug\MacNCheese.dll
+C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\bin\Debug\MacNCheese.pdb
+C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\obj\Debug\MacNCheese.dll
+C:\Users\Amber-PC2\source\repos\MacNCheese\MacNCheese\obj\Debug\MacNCheese.pdb
