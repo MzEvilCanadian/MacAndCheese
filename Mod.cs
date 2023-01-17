@@ -19,7 +19,7 @@ namespace MacNCheese
     {
         internal const string MOD_ID = "MacAndCheese";
         internal const string MOD_NAME = "Mac and Cheese";
-        internal const string MOD_VERSION = "0.0.4";
+        internal const string MOD_VERSION = "0.0.5";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         internal const string PLATEUP_VERSION = "1.1.2";
 
