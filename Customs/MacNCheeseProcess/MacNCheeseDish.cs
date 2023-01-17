@@ -19,7 +19,8 @@ namespace MacNCheese.Dishes
         {
             new Dish.MenuItem
             {
-                Item = Mod.MacNCheeseServing
+                Item = Mod.MacNCheeseServing,
+                Phase = MenuPhase.Side
             }
         };
         public override HashSet<Dish.IngredientUnlock> IngredientsUnlocks => new HashSet<Dish.IngredientUnlock>
