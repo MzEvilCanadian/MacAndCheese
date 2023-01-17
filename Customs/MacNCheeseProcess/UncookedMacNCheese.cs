@@ -8,8 +8,8 @@ namespace MacNCheese.Customs.MacNCheeseProcess
 {
     class UncookedMacNCheese : CustomItemGroup
     {
-        public override string UniqueNameID => "Uncooked Pasta";
-        public override GameObject Prefab => Mod.Cheese.Prefab;         // Filler line until graphics are made
+        public override string UniqueNameID => "Uncooked Mac and Cheese";
+        public override GameObject Prefab => Mod.Onion.Prefab;         // Filler line until graphics are made
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.Dish;
 
@@ -17,13 +17,38 @@ namespace MacNCheese.Customs.MacNCheeseProcess
         {
             new ItemGroup.ItemSet()
             {
-                Max = 3,
-                Min = 3,
+                Max = 1,
+                Min = 1,
                 Items = new List<Item>()
                 {
-                    Mod.UncookedMacNCheese,
-                    Mod.MilkIngredient,
+                    Mod.CookedPasta
+                }
+            },
+            new ItemGroup.ItemSet()
+            {
+                Max = 1,
+                Min = 1,
+                Items = new List<Item>()
+                {
+                    Mod.MilkIngredient
+                }
+            },
+            new ItemGroup.ItemSet()
+            {
+                Max = 1,
+                Min = 1,
+                Items = new List<Item>()
+                {
                     Mod.Butter
+                }
+            },
+            new ItemGroup.ItemSet()
+            {
+                Max = 1,
+                Min = 1,
+                Items = new List<Item>()
+                {
+                    Mod.Cheese
                 }
             }
         };

@@ -7,8 +7,8 @@ namespace MacNCheese.Customs.MacNCheeseProcess
 {
     class CookedMacNCheesePot : CustomItem
     {
-        public override string UniqueNameID => "CookedNoodlePot";
-        public override GameObject Prefab => Mod.Tomato.Prefab;
+        public override string UniqueNameID => "CookedMacNCheesePot";
+        public override GameObject Prefab => Mod.Carrot.Prefab;
         public override Item DisposesTo => Mod.Pot;
         public override int SplitCount => 10;
         public override Item SplitSubItem => Mod.MacNCheeseServing;
@@ -17,7 +17,7 @@ namespace MacNCheese.Customs.MacNCheeseProcess
             Mod.Pot
         };
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.None;
+        public override ItemStorage ItemStorageFlags => ItemStorage.Dish;
 
         /*   public override void OnRegister(GameDataObject gameDataObject)
    {
@@ -33,6 +33,6 @@ namespace MacNCheese.Customs.MacNCheeseProcess
 
        // MaterialUtils.ApplyMaterial([object], [name], [material list]
    }
-*/
+        */
     }
 }

@@ -19,19 +19,28 @@ namespace MacNCheese
     {
         internal const string MOD_ID = "MacAndCheese";
         internal const string MOD_NAME = "Mac and Cheese";
-        internal const string MOD_VERSION = "0.0.2";
+        internal const string MOD_VERSION = "0.0.4";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         internal const string PLATEUP_VERSION = "1.1.2";
 
        //  public static AssetBundle bundle;
 
+        // Processes
         internal static Process Cook => GetExistingGDO<Process>(ProcessReferences.Cook);
         internal static Process Chop => GetExistingGDO<Process>(ProcessReferences.Chop);
+
+        // Vanilla items
         internal static Item Pot => GetExistingGDO<Item>(ItemReference.Pot);
         internal static Item Water => GetExistingGDO<Item>(ItemReference.Water);
         internal static Item Cheese => GetExistingGDO<Item>(ItemReference.Cheese);
-        internal static Item Tomato => GetExistingGDO<Item>(ItemReference.Tomato);
 
+        // Used as template prefabs only
+        internal static Item Tomato => GetExistingGDO<Item>(ItemReference.Tomato);
+        internal static Item Onion => GetExistingGDO<Item>(ItemReference.Onion);
+        internal static Item Carrot => GetExistingGDO<Item>(ItemReference.Carrot);
+        internal static Item BreadSlice => GetExistingGDO<Item>(ItemReference.BreadSlice);
+
+        // IngredientLib Items
         public static Item Milk => Find<Item>(IngredientLib.References.IngredientReferences.Milk);
         public static Item MilkIngredient => Find<Item>(IngredientLib.References.SplitIngredientReferences.Milk);
         public static Item Butter => Find<Item>(IngredientLib.References.IngredientReferences.Butter);
@@ -45,6 +54,7 @@ namespace MacNCheese
         internal static Item MacNCheeseServing => GetModdedGDO<Item, MacNCheeseServing>();
 
         internal static Dish MacNCheeseDish => GetModdedGDO<Dish, MacNCheeseDish>();
+
 
         internal static bool debug = true;
         public static void LogInfo(string _log) { Debug.Log($"[{MOD_NAME}] " + _log); }
@@ -82,7 +92,6 @@ namespace MacNCheese
         {
             return (T)GDOUtils.GetExistingGDO(id);
         }
-
         internal static T Find<T>(int id) where T : GameDataObject
         {
             return (T)GDOUtils.GetExistingGDO(id) ?? (T)GDOUtils.GetCustomGameDataObject(id)?.GameDataObject;

@@ -8,8 +8,8 @@ namespace MacNCheese.Customs.MacNCheeseProcess
 {
     class CookedPasta :  CustomItem
     {
-        public override string UniqueNameID => "UncookedMacNCheese";
-        public override GameObject Prefab => Mod.Tomato.Prefab;         // Filler line until graphics are made
+        public override string UniqueNameID => "CookedPasta";
+        public override GameObject Prefab => Mod.Cheese.Prefab;         // Filler line until graphics are made
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.Dish;
 

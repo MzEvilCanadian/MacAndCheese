@@ -14,7 +14,6 @@ namespace MacNCheese.Dishes
         public override CardType CardType => CardType.Default;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
-        public override float SelectionBias => 1;
 
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
         {
@@ -23,15 +22,15 @@ namespace MacNCheese.Dishes
                 Item = Mod.MacNCheeseServing
             }
         };
-     /*   public override HashSet<Dish.IngredientUnlock> IngredientsUnlocks => new HashSet<Dish.IngredientUnlock>
+        public override HashSet<Dish.IngredientUnlock> IngredientsUnlocks => new HashSet<Dish.IngredientUnlock>
         {
             new Dish.IngredientUnlock
             {
                 Ingredient = Mod.UncookedPasta,
-                MenuItem = Mod.CookedMacNCheesePot
+                MenuItem = Mod.UncookedMacNCheese
             }
         };
-     */
+     
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
             Mod.Pot,

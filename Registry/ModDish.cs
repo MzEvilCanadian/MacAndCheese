@@ -5,11 +5,9 @@ using System.Collections.Generic;
 
 namespace MacNCheese.Dishes
 {
-
     public abstract class ModDish : CustomDish, ILocalisedRecipeHolder
     {
         public virtual IDictionary<Locale, string> LocalisedRecipe { get; }
-
         public virtual IDictionary<Locale, UnlockInfo> LocalisedInfo { get; }
 
         public override LocalisationObject<UnlockInfo> Info
