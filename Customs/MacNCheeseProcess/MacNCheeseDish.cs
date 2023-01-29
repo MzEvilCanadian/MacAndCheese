@@ -19,35 +19,26 @@ namespace MacNCheese.Dishes
         {
             new Dish.MenuItem
             {
-                Item = Mod.MacNCheeseServing,
+                Item = Main.MacNCheeseServing,
                 Phase = MenuPhase.Side,
                 Weight = 1
             }
-        };
-        public override HashSet<Dish.IngredientUnlock> IngredientsUnlocks => new HashSet<Dish.IngredientUnlock>
-        {
-            new Dish.IngredientUnlock
-            {
-                Ingredient = Mod.UncookedPasta,
-                MenuItem = Mod.UncookedMacNCheese
-            }
-        };
-     
+        };     
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
-            Mod.Pot,
-            Mod.Water,
-            Mod.Cheese,
-            Mod.Butter,
-            Mod.Milk
-          //  Mod.Pasta    Not Implimented Yet
+            Main.Pot,
+            Main.Water,
+            Main.Cheese,
+            Main.ButterBlock,
+            Main.Milk,
+            Main.Macaroni
         };
         public override HashSet<Process> RequiredProcesses => new HashSet<Process>
         {
-            Mod.Cook,
-            Mod.Chop,
+            Main.Cook,
+            Main.Chop,
         };
-        public override IDictionary<Locale, string> LocalisedRecipe => new Dictionary<Locale, string>
+        public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
             { Locale.English, "Put pasta and water in a pot then cook. Add cheese, butter, and milk then cook again. Makes 10 servings" }
         };
