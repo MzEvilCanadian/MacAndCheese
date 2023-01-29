@@ -8,7 +8,7 @@ namespace MacNCheese.Dishes
 {
     public class MacNCheeseDish : ModDish
     {
-        public override string UniqueNameID => "Mac and Cheese";
+        public override string UniqueNameID => "Mac and Cheese Dish";
         public override DishType Type => DishType.Side;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;
@@ -40,7 +40,7 @@ namespace MacNCheese.Dishes
         };
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Put pasta and water in a pot then cook. Add cheese, butter, and milk then cook again. Makes 10 servings" }
+            { Locale.English, "Put pasta and water in a pot then cook. Add grated cheese, a slice of butter, and milk then cook again. Makes 10 portions" }
         };
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {

@@ -20,7 +20,7 @@ namespace MacNCheese.Customs.MacNCheeseProcess
               var materials = new Material[]
               {
                   MaterialUtils.GetExistingMaterial("Plate"),
-               };
+              };
                MaterialUtils.ApplyMaterial(Prefab, "Bowl", materials);
               materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
               MaterialUtils.ApplyMaterial(Prefab, "Pile", materials);

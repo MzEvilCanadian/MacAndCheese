@@ -46,6 +46,7 @@
     <Compile Include="Customs\MacNCheeseProcess\CookedMacNCheesePot.cs" />
     <Compile Include="Customs\MacNCheeseProcess\MacNCheeseDish.cs" />
     <Compile Include="Customs\MacNCheeseProcess\MacNCheeseServing.cs" />
+    <Compile Include="Customs\MacNCheeseProcess\PlatedServing.cs" />
     <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Butter Start\UncookedMacButterMilkandCheese.cs" />
     <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Butter Start\UncookedMacButterCheeseandMilk.cs" />
     <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Butter Start\UncookedMacButterandCheese.cs" />

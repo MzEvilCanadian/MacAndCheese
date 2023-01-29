@@ -26,17 +26,13 @@ namespace MacNCheese.Customs.MacNCheeseProcess
             {
                    MaterialUtils.GetExistingMaterial("Metal"),
              };
-            MaterialUtils.ApplyMaterial(Prefab, "Pot", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal - Dark");
-            MaterialUtils.ApplyMaterial(Prefab, "Handles", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Pot/Pot", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
+            MaterialUtils.ApplyMaterial(Prefab, "Pot/Handles", materials);
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Milk", materials);
             materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Mac", materials);
-
-            // MaterialUtils.ApplyMaterial([object], [name], [material list]
-
-
         }
     }
 }

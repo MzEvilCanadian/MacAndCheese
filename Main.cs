@@ -19,7 +19,7 @@ namespace MacNCheese
     {
         internal const string MOD_ID = "MacAndCheese";
         internal const string MOD_NAME = "Mac and Cheese";
-        internal const string MOD_VERSION = "0.1.0";
+        internal const string MOD_VERSION = "0.1.2";
         internal const string MOD_AUTHOR = "MzEvilCanadian";
         public const string MOD_GAMEVERSION = ">=1.1.3";
 
@@ -34,6 +34,7 @@ namespace MacNCheese
         internal static Item Water => GetExistingGDO<Item>(ItemReference.Water);
         internal static Item Cheese => GetExistingGDO<Item>(ItemReference.Cheese);
         internal static Item CheeseChopped => GetExistingGDO<Item>(ItemReference.CheeseGrated);
+        internal static Item Plate => GetExistingGDO<Item>(ItemReference.Plate);
 
         // IngredientLib Items
         public static Item Milk => Find<Item>(IngredientLib.References.GetIngredient("Milk"));
@@ -68,6 +69,7 @@ namespace MacNCheese
         internal static Item CookedMacNCheesePot  => GetModdedGDO<Item, CookedMacNCheesePot>();
         internal static Item CookedMacNCheeseHalfPot => GetModdedGDO<Item, CookedMacNCheeseHalfPot>();
         internal static Item MacNCheeseServing => GetModdedGDO<Item, MacNCheeseServing>();
+        internal static ItemGroup PlatedServing => GetModdedGDO<ItemGroup, PlatedServing>();
         internal static Dish MacNCheeseDish => GetModdedGDO<Dish, MacNCheeseDish>();
 
 
@@ -86,9 +88,34 @@ namespace MacNCheese
         {
             base.PostActivate(mod);
             bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
+
+            // Milk First
             AddGameDataObject<UncookedMacandMilk>();
-            AddGameDataObject<CookedMacNCheesePot>();
+            AddGameDataObject<UncookedMacMilkandButter>();
+            AddGameDataObject<UncookedMacMilkandCheese>();
+            AddGameDataObject<UncookedMacMilkButterandCheese>();
+            AddGameDataObject<UncookedMacMilkCheeseandButter>();
+
+            // Butter First
+            AddGameDataObject<UncookedMacandButter>();
+            AddGameDataObject<UncookedMacButterandCheese>();
+            AddGameDataObject<UncookedMacButterandMilk>();
+            AddGameDataObject<UncookedMacButterCheeseandMilk>();
+            AddGameDataObject<UncookedMacButterMilkandCheese>();
+
+            // Cheese First
+            AddGameDataObject<UncookedMacandCheese>();
+            AddGameDataObject<UncookedMacCheeseandButter>();
+            AddGameDataObject<UncookedMacCheeseandMilk>();
+            AddGameDataObject<UncookedMacCheeseButterandMilk>();
+            AddGameDataObject<UncookedMacCheeseMilkandButter>();
+
+            // Cooked
             AddGameDataObject<MacNCheeseServing>();
+            AddGameDataObject<PlatedServing>();
+            AddGameDataObject<CookedMacNCheeseHalfPot>();
+            AddGameDataObject<CookedMacNCheesePot>();
+
             AddGameDataObject<MacNCheeseDish>();
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)

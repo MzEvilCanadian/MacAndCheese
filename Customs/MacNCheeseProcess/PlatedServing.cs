@@ -6,14 +6,14 @@ using UnityEngine;
 
 namespace MacNCheese.Customs.MacNCheeseProcess
 {
-    class UncookedMacandMilk : CustomItemGroup
+    class PlatedServing : CustomItemGroup
     {
-        public override string UniqueNameID => "Uncooked Mac and Milk";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Uncooked Mac and Milk");
+        public override string UniqueNameID => "Plated Serving";
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Plated Mac");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.Dish;
-        public override Item DisposesTo => Main.Pot;
-
+        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
+        public override Item DisposesTo => Main.Plate;
+        public override bool IsMergeableSide => true;
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
             new ItemGroup.ItemSet()
@@ -22,7 +22,7 @@ namespace MacNCheese.Customs.MacNCheeseProcess
                 Min = 1,
                 Items = new List<Item>()
                 {
-                    Main.CookedMacaroni
+                    Main.MacNCheeseServing
                 }
             },
             new ItemGroup.ItemSet()
@@ -31,24 +31,25 @@ namespace MacNCheese.Customs.MacNCheeseProcess
                 Min = 1,
                 Items = new List<Item>()
                 {
-                    Main.MilkIngredient
+                    Main.Plate
                 }
             }
         };
 
         public override void OnRegister(GameDataObject gameDataObject)
         {
+
             var materials = new Material[]
             {
-                   MaterialUtils.GetExistingMaterial("Metal"),
+                  MaterialUtils.GetExistingMaterial("Plate"),
              };
-            MaterialUtils.ApplyMaterial(Prefab, "Pot/Pot", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Metal Dark");
-            MaterialUtils.ApplyMaterial(Prefab, "Pot/Handles", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("Piano White");
-            MaterialUtils.ApplyMaterial(Prefab, "Milk", materials);
-            materials[0] = MaterialUtils.GetExistingMaterial("IngredientLib - \"Egg Dough\"");
+            MaterialUtils.ApplyMaterial(Prefab, "Plate", materials);
+            MaterialUtils.ApplyMaterial(Prefab, "Bowl", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
+            MaterialUtils.ApplyMaterial(Prefab, "Pile", materials);
+            materials[0] = MaterialUtils.GetExistingMaterial("Plastic - Yellow");
             MaterialUtils.ApplyMaterial(Prefab, "Mac", materials);
         }
+
     }
 }
