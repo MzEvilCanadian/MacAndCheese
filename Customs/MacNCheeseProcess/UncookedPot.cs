@@ -1,4 +1,5 @@
-﻿using KitchenData;
+﻿using Kitchen;
+using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using System.Collections.Generic;
@@ -6,9 +7,9 @@ using UnityEngine;
 
 namespace MacNCheese.Customs.MacNCheeseProcess
 {
-    class UncookedMacButterMilkandCheese: CustomItemGroup
+    class UncookedPot : CustomItemGroup<MyItemGroupView>
     {
-        public override string UniqueNameID => "Uncooked Mac Butter Milk and Cheese";
+        public override string UniqueNameID => "Uncooked Mac Milk Cheese and Butter";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Uncooked Mac Pot");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.Dish;
@@ -20,18 +21,21 @@ namespace MacNCheese.Customs.MacNCheeseProcess
             {
                 Max = 1,
                 Min = 1,
+                IsMandatory = true,
                 Items = new List<Item>()
                 {
-                    Main.UncookedMacButterandMilk
+                    Main.CookedMacaroni
                 }
             },
             new ItemGroup.ItemSet()
             {
-                Max = 1,
-                Min = 1,
+                Max = 3,
+                Min = 3,
                 Items = new List<Item>()
                 {
-                    Main.CheeseChopped
+                    Main.ButterSlice,
+                    Main.CheeseChopped,
+                    Main.MilkIngredient
                 }
             }
         };
@@ -64,6 +68,38 @@ namespace MacNCheese.Customs.MacNCheeseProcess
             MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving0", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving1", materials);
             MaterialUtils.ApplyMaterial(Prefab, "Cheese/Shaving2", materials);
+
+            Prefab.GetComponent<MyItemGroupView>()?.Setup(Prefab);
+        }
+
+    }
+    public class MyItemGroupView : ItemGroupView
+    {
+        internal void Setup(GameObject prefab)
+        {
+            // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
+            // All of these sub-objects are hidden unless the item is present
+            ComponentGroups = new()
+            {
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject (prefab, "Milk"),
+                    Item = Main.MilkIngredient
+                },
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Butter"),
+                    Item = Main.ButterSlice
+                },
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(prefab, "Cheese"),
+                    Item = Main.CheeseChopped
+                },
+            };
         }
     }
 }
+
+
+

@@ -9,6 +9,7 @@
     <RootNamespace>MacNCheese</RootNamespace>
     <AssemblyName>MacNCheese</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+	<LangVersion>latest</LangVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -47,21 +48,7 @@
     <Compile Include="Customs\MacNCheeseProcess\MacNCheeseDish.cs" />
     <Compile Include="Customs\MacNCheeseProcess\MacNCheeseServing.cs" />
     <Compile Include="Customs\MacNCheeseProcess\PlatedServing.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Butter Start\UncookedMacButterMilkandCheese.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Butter Start\UncookedMacButterCheeseandMilk.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Butter Start\UncookedMacButterandCheese.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Butter Start\UncookedMacButterandMilk.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Cheese Start\UncookedMacCheeseButterandMilk.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Cheese Start\UncookedMacCheeseandButter.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Cheese Start\UncookedMacCheeseMilkandButter.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Cheese Start\UncookedMacCheeseandMilk .cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Milk Start\UncookedMacMilkCheeseandButter.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Milk Start\UncookedMacMilkandCheese.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Butter Start\UncookedMacandButter.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Cheese Start\UncookedMacandCheese.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Milk Start\UncookedMacMilkButterandCheese.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Milk Start\UncookedMacMilkandButter.cs" />
-    <Compile Include="Customs\MacNCheeseProcess\Uncooked Process\Milk Start\UncookedMacandMilk.cs" />
+    <Compile Include="Customs\MacNCheeseProcess\UncookedPot.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Registry\ILocalisedRecipeHolder.cs" />
     <Compile Include="Registry\ModDish.cs" />

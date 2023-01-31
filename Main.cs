@@ -45,26 +45,6 @@ namespace MacNCheese
         public static Item Macaroni => Find<Item>(IngredientLib.References.GetIngredient("macaroni"));
 
 
-        // Milk start
-        internal static ItemGroup UncookedMacandMilk => GetModdedGDO<ItemGroup, UncookedMacandMilk>();
-        internal static ItemGroup UncookedMacMilkandButter => GetModdedGDO<ItemGroup, UncookedMacMilkandButter>();
-        internal static ItemGroup UncookedMacMilkandCheese => GetModdedGDO<ItemGroup, UncookedMacMilkandCheese>();
-        internal static ItemGroup UncookedMacMilkButterandCheese => GetModdedGDO<ItemGroup, UncookedMacMilkButterandCheese>();
-        internal static ItemGroup UncookedMacMilkCheeseandButter => GetModdedGDO<ItemGroup, UncookedMacMilkCheeseandButter>();
-
-        //Butter start
-        internal static ItemGroup UncookedMacandButter => GetModdedGDO<ItemGroup, UncookedMacandButter>();
-        internal static ItemGroup UncookedMacButterandMilk => GetModdedGDO<ItemGroup, UncookedMacButterandMilk>();
-        internal static ItemGroup UncookedMacButterandCheese => GetModdedGDO<ItemGroup, UncookedMacButterandCheese>();
-        internal static ItemGroup UncookedMacButterMilkandCheese => GetModdedGDO<ItemGroup, UncookedMacButterMilkandCheese>();
-        internal static ItemGroup UncookedMacButterCheeseandMilk => GetModdedGDO<ItemGroup, UncookedMacButterCheeseandMilk>();
-
-        // Cheese Start
-        internal static ItemGroup UncookedMacandCheese => GetModdedGDO<ItemGroup, UncookedMacandCheese>();
-        internal static ItemGroup UncookedMacCheeseandMilk => GetModdedGDO<ItemGroup, UncookedMacCheeseandMilk>();
-        internal static ItemGroup UncookedMacCheeseMilkandButter => GetModdedGDO<ItemGroup, UncookedMacCheeseMilkandButter>();
-        internal static ItemGroup UncookedMacCheeseandButter => GetModdedGDO<ItemGroup, UncookedMacCheeseandButter>();
-        internal static ItemGroup UncookedMacCheeseButterandMilk => GetModdedGDO<ItemGroup, UncookedMacCheeseButterandMilk>();
 
         internal static Item CookedMacNCheesePot  => GetModdedGDO<Item, CookedMacNCheesePot>();
         internal static Item CookedMacNCheeseHalfPot => GetModdedGDO<Item, CookedMacNCheeseHalfPot>();
@@ -89,33 +69,11 @@ namespace MacNCheese
             base.PostActivate(mod);
             bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
 
-            // Milk First
-            AddGameDataObject<UncookedMacandMilk>();
-            AddGameDataObject<UncookedMacMilkandButter>();
-            AddGameDataObject<UncookedMacMilkandCheese>();
-            AddGameDataObject<UncookedMacMilkButterandCheese>();
-            AddGameDataObject<UncookedMacMilkCheeseandButter>();
-
-            // Butter First
-            AddGameDataObject<UncookedMacandButter>();
-            AddGameDataObject<UncookedMacButterandCheese>();
-            AddGameDataObject<UncookedMacButterandMilk>();
-            AddGameDataObject<UncookedMacButterCheeseandMilk>();
-            AddGameDataObject<UncookedMacButterMilkandCheese>();
-
-            // Cheese First
-            AddGameDataObject<UncookedMacandCheese>();
-            AddGameDataObject<UncookedMacCheeseandButter>();
-            AddGameDataObject<UncookedMacCheeseandMilk>();
-            AddGameDataObject<UncookedMacCheeseButterandMilk>();
-            AddGameDataObject<UncookedMacCheeseMilkandButter>();
-
-            // Cooked
-            AddGameDataObject<MacNCheeseServing>();
+            AddGameDataObject<UncookedPot>();
             AddGameDataObject<PlatedServing>();
-            AddGameDataObject<CookedMacNCheeseHalfPot>();
+            AddGameDataObject<MacNCheeseServing>();
             AddGameDataObject<CookedMacNCheesePot>();
-
+            AddGameDataObject<CookedMacNCheeseHalfPot>();
             AddGameDataObject<MacNCheeseDish>();
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
